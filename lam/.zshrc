@@ -135,6 +135,19 @@ function run() {
     echo "Compilation is fucked."
   fi
 }
+function trsl(){
+  while true
+  do 
+    echo -n "Input: "
+    read userInput
+    if [[ $userInput == ":q" ]]; then
+      return 
+    else
+      tgpt "Translate to English: $userInput"
+
+    fi
+  done
+}
 
 
 
