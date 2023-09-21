@@ -122,7 +122,7 @@ alias yays="yay -S $1"
 alias yayr="yay -Rns $1"
 alias py='python'
 alias adrstop='waydroid sesseion stop'
-
+alias vi='nvim'
 function run() {
   filename=$1 
   outputname="${filename%.*}"
