@@ -1,8 +1,6 @@
 fortune
 echo ""
 fastfetch
-
-#test
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -53,7 +51,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -82,7 +80,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -115,14 +113,16 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias killyourself="shutdown now"
 alias gpt="tgpt"
 alias :q="exit"
 alias yays="yay -S $1"
 alias yayr="yay -Rns $1"
 alias py='python'
-alias adrstop='waydroid sesseion stop'
 alias vi='nvim'
+alias update-grub='sudo update-grub'
+alias pacman-restart='sudo rm /var/lib/pacman/db.lck'
+alias keysound='Neptune -cli -soundkey "Nk Cream 2"'
+
 function run() {
   filename=$1 
   outputname="${filename%.*}"
@@ -130,11 +130,16 @@ function run() {
     g++ -o "$outputname" "$filename"
   elif [[ $filename == *.c ]]; then
     gcc -o "$outputname" "$filename"
+  elif [[ $filename == *.asm ]]; then
+    nasm -f elf32 -o "${filename}.o" "$filename"
+    ld -m elf_i386 -o "$outputname" "${filename}.o"
+    
   fi
 
   if [ $? -eq 0 ]; then
     echo "Compilation successful\n"
     ./"$outputname"
+    echo "Exit code: "$?
   else
     echo "Compilation is fucked."
   fi
@@ -157,14 +162,5 @@ function trsl(){
   
 }
 
-function cap(){
-
-}
-
- 
-
-
-
-
-
+bindkey -v
 
