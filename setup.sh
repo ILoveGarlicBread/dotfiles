@@ -1,13 +1,10 @@
 #!/bin/bash
 # Post-install set up script
-#if [ "$EUID" -ne 0 ]; then
-#  echo "This script requires administrative privileges. Please run
-# it with sudo."
-#  exit 1
-#fi
-
 
 cd 
+  
+function main()
+{
 # Gnome settings
 echo "Enabling tap to click..."
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
@@ -54,7 +51,7 @@ mkdir -p ~/.local/share/fonts/
 cp -r ~/dotfiles/fonts ~/.local/share/
 
 gsettings set org.gnome.desktop.interface document-font-name 'Fira Sans 11'
-gsettings set org.gnome.desktop.interface monospace-font-name 'FiraCode Nerd Font Mono Retina 10'
+gsettings set org.gnome.desktop.interface monospace-font-name 'FiraCode Nerd Font Mono weight=450 10'
 gsettings set org.gnome.desktop.interface font-name 'Fira Sans 11'   
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Bold 11'
 if [ $? -eq 0 ]; then
@@ -80,8 +77,10 @@ packages=(
 #for package in "${packages[@]}"; do 
 #  yay -S --noconfirm "$package"
 #done
+}
 
 
 
+main
 
 
