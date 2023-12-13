@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Post-install set up script
 
 cd 
@@ -68,15 +69,36 @@ gsettings set org.gnome.desktop.interface gtk-theme "Colloid-Dark-Nord"
 packages=(
   zsh
   kitty
+  fortune-mod
   fastfetch
   neovim
   extension-manager
   qbittorrent
+  jq
+  spotify
+  spicetify-cli
+  qemu
+  virt-manager
+  tlpui
+  realneptune
 )
 
-#for package in "${packages[@]}"; do 
-#  yay -S --noconfirm "$package"
-#done
+for package in "${packages[@]}"; do 
+  yay -S --noconfirm "$package"
+done
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cd
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+
+
+
+# Install gnome extensions
+cd ~/dotfiles/
+./install-gnome-extensions.sh --enable --file links.txt
+cd
 }
 
 

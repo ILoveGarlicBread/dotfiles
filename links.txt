@@ -1,0 +1,15 @@
+https://extensions.gnome.org/extension/5338/aylurs-widgets/
+https://extensions.gnome.org/extension/3193/blur-my-shell/
+https://extensions.gnome.org/extension/3740/compiz-alike-magic-lamp-effect/
+https://extensions.gnome.org/extension/5542/custom-reboot/
+https://extensions.gnome.org/extension/307/dash-to-dock/
+https://extensions.gnome.org/extension/4245/gesture-improvements/
+https://extensions.gnome.org/extension/1319/gsconnect/
+https://extensions.gnome.org/extension/3843/just-perfection/
+https://extensions.gnome.org/extension/5461/osd-volume-number/
+https://extensions.gnome.org/extension/5278/pano/
+https://extensions.gnome.org/extension/5237/rounded-window-corners/
+https://extensions.gnome.org/extension/3960/transparent-top-bar-adjustable-transparency/
+https://extensions.gnome.org/extension/19/user-themes/
+https://extensions.gnome.org/extension/1460/vitals/
+https://extensions.gnome.org/extension/5177/vertical-workspaces/
