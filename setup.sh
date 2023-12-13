@@ -32,17 +32,17 @@ if [ %? -eq 0]; then
 fi
 echo "Moving kitty..."
 mkdir ~/.config/kitty/
-cp $source_folder/kitty/kitty.conf $destination_folder/kitty/
-cp $source_folder/kitty/nord.conf $destination_folder/kitty/
-cp $source_folder/kitty/everforest.conf $destination_folder/kitty/
-cp $source_folder/kitty/gruvbox_dark.conf $destination_folder/kitty/
+cp $source_folder/.config/kitty/kitty.conf $destination_folder/kitty/
+cp $source_folder/.config/kitty/nord.conf $destination_folder/kitty/
+cp $source_folder/.config/kitty/everforest.conf $destination_folder/kitty/
+cp $source_folder/.config/kitty/gruvbox_dark.conf $destination_folder/kitty/
 if [ %? -eq 0]; then
   echo ".kitty config moved successfully."
 fi
 
 echo "Moving fastfetch..."
 mkdir ~/.config/fastfetch/
-cp $source_folder/fastfetch/config.conf ~/.config/fastfetch/
+cp $source_folder/.config/fastfetch/config.conf ~/.config/fastfetch/
 if [ %? -eq 0]; then
   echo ".fastfetch config moved successfully."
 fi
@@ -73,9 +73,9 @@ packages=(
   qbittorrent
 )
 
-for package in "${packages[@]}"; do 
-  yay -S --noconfirm "$package"
-done
+#for package in "${packages[@]}"; do 
+#  yay -S --noconfirm "$package"
+#done
 
 
 
