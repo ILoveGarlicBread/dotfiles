@@ -1,10 +1,10 @@
 #!/bin/bash
 # Post-install set up script
-if [ "$EUID" -ne 0 ]; then
-  echo "This script requires administrative privileges. Please run
- it with sudo."
-  exit 1
-fi
+#if [ "$EUID" -ne 0 ]; then
+#  echo "This script requires administrative privileges. Please run
+# it with sudo."
+#  exit 1
+#fi
 
 
 cd
@@ -29,7 +29,7 @@ echo "Moving .zshrc..."
 cp ~/dotfiles/.zshrc ~/
 if [ %? -eq 0]; then
   echo ".zshrc moved successfully."
-
+fi
 echo "Moving kitty..."
 mkdir ~/.config/kitty/
 cp $source_folder/kitty/kitty.conf $destination_folder/kitty/
@@ -37,15 +37,15 @@ cp $source_folder/kitty/nord.conf $destination_folder/kitty/
 cp $source_folder/kitty/everforest.conf $destination_folder/kitty/
 cp $source_folder/kitty/gruvbox_dark.conf $destination_folder/kitty/
 if [ %? -eq 0]; then
-  echo ".zshrc moved successfully."
-
+  echo ".kitty config moved successfully."
+fi
 
 echo "Moving fastfetch..."
 mkdir ~/.config/fastfetch/
 cp $source_folder/fastfetch/config.conf ~/.config/fastfetch/
 if [ %? -eq 0]; then
-  echo ".zshrc moved successfully."
-
+  echo ".fastfetch config moved successfully."
+fi
 echo "Applying fonts..."
 mkdir ~/.local/share/fonts/
 unzip ~/dotfiles/fonts/FiraCode.zip -d ~/.local/share/fonts/
@@ -57,11 +57,11 @@ gsettings set org.gnome desktop.interface font-name 'Fira Sans 11'
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Bold 11'
 if [ %? -eq 0]; then
   echo "Fonts applied successfully"
-
+fi
 echo "Applying theme..."
 mkdir ~/.themes
 unzip ~/dotfiles/.themes/Colloid-Dark-Nord.zip -d ~/.themes/
-gsettings set org.gnome.shell.extensions.user-theme name 'Colloid-Dark-Nord'
+#gsettings set org.gnome.shell.extensions.user-theme name 'Colloid-Dark-Nord'
 
 # Installing packages
 packages=(
@@ -70,6 +70,7 @@ packages=(
   fastfetch
   neovim
   extension-manager
+  qbittorrent
 )
 
 for package in "${packages[@]}"; do 
