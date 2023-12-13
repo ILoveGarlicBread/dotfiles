@@ -7,16 +7,18 @@
 #fi
 
 
-cd
+cd 
 # Gnome settings
 echo "Enabling tap to click..."
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 echo "Tap to click status: "
 gsettings get org.gnome.desktop.peripherals.touchpad tap-to-click 
+echo""
 echo "Adjusting volume step..."
 gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 1
-echo -n "Volume step: " 
+echo -n "Volume step = " 
 gsettings get org.gnome.settings-daemon.plugins.media-keys volume-step 
+echo""
 
 
 # Install gnome extensions
@@ -28,39 +30,42 @@ cp ~/dotfiles/.zshrc ~/
 if [ $? -eq 0 ]; then
   echo ".zshrc moved successfully."
 fi
+echo""
+
 echo "Moving kitty..."
 mkdir -p ~/.config/kitty/
-cp ~/dotfiles/.config/kitty/kitty.conf ~/.config/kitty/
-cp ~/dotfiles/.config/kitty/nord.conf ~/.config/kitty/
-cp ~/dotfiles/.config/kitty/everforest.conf ~/.config/kitty/
-cp ~/dotfiles/.config/kitty/gruvbox_dark.conf ~/.config/kitty/
+cp -r ~/dotfiles/.config/kitty ~/.config/
 if [ $? -eq 0 ]; then
-  echo ".kitty config moved successfully."
+  echo "kitty config moved successfully."
 fi
+echo""
 
 echo "Moving fastfetch..."
 mkdir -p ~/.config/fastfetch/
 cp ~/dotfiles/.config/fastfetch/config.conf ~/.config/fastfetch/
 if [ $? -eq 0 ]; then
-  echo ".fastfetch config moved successfully."
+  echo "fastfetch config moved successfully."
 fi
+echo""
+
+
 echo "Applying fonts..."
 mkdir -p ~/.local/share/fonts/
-unzip ~/dotfiles/fonts/FiraCode.zip -d ~/.local/share/fonts/
-unzip ~/dotfiles/fonts/FiraSans.zip -d ~/.local/share/fonts/
-unzip ~/dotfiles/fonts/MesloLGS.zip -d ~/.local/share/fonts/
+cp -r ~/dotfiles/fonts ~/.local/share/
+
 gsettings set org.gnome.desktop.interface document-font-name 'Fira Sans 11'
 gsettings set org.gnome.desktop.interface monospace-font-name 'FiraCode Nerd Font Mono Retina 10'
 gsettings set org.gnome.desktop.interface font-name 'Fira Sans 11'   
-settings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Bold 11'
+gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Bold 11'
 if [ $? -eq 0 ]; then
   echo "Fonts applied successfully"
 fi
+echo""
 
 echo "Applying theme..."
 mkdir -p ~/.themes
-unzip ~/dotfiles/.themes/Colloid-Dark-Nord.zip -d ~/.themes/
-#gsettings set org.gnome.shell.extensions.user-theme name 'Colloid-Dark-Nord'
+cp -r ~/dotfiles/.themes/Colloid-Dark-Nord ~/.theme/
+gsettings set org.gnome.desktop.interface gtk-theme "Colloid-Dark-Nord"
 
 # Installing packages
 packages=(
