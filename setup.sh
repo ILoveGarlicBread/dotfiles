@@ -24,7 +24,7 @@ gsettings get org.gnome.settings-daemon.plugins.media-keys volume-step
 
 # Move config files
 source_folder="~/dotfiles"
-destination_folder="~/.config/"
+destination_folder="~/.config"
 echo "Moving .zshrc..."
 cp ~/dotfiles/.zshrc ~/
 if [ %? -eq 0]; then
