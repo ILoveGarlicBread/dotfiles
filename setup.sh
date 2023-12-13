@@ -31,7 +31,7 @@ if [ $? -eq 0]; then
   echo ".zshrc moved successfully."
 fi
 echo "Moving kitty..."
-mkdir ~/.config/kitty/
+mkdir -p ~/.config/kitty/
 cp $source_folder/.config/kitty/kitty.conf $destination_folder/kitty/
 cp $source_folder/.config/kitty/nord.conf $destination_folder/kitty/
 cp $source_folder/.config/kitty/everforest.conf $destination_folder/kitty/
@@ -41,13 +41,13 @@ if [ $? -eq 0]; then
 fi
 
 echo "Moving fastfetch..."
-mkdir ~/.config/fastfetch/
+mkdir -p ~/.config/fastfetch/
 cp $source_folder/.config/fastfetch/config.conf ~/.config/fastfetch/
 if [ $? -eq 0]; then
   echo ".fastfetch config moved successfully."
 fi
 echo "Applying fonts..."
-mkdir ~/.local/share/fonts/
+mkdir -p ~/.local/share/fonts/
 unzip ~/dotfiles/fonts/FiraCode.zip -d ~/.local/share/fonts/
 unzip ~/dotfiles/fonts/FiraSans.zip -d ~/.local/share/fonts/
 unzip ~/dotfiles/fonts/MesloLGS.zip -d ~/.local/share/fonts/
@@ -59,7 +59,7 @@ if [ $? -eq 0]; then
   echo "Fonts applied successfully"
 fi
 echo "Applying theme..."
-mkdir ~/.themes
+mkdir -p ~/.themes
 unzip ~/dotfiles/.themes/Colloid-Dark-Nord.zip -d ~/.themes/
 #gsettings set org.gnome.shell.extensions.user-theme name 'Colloid-Dark-Nord'
 
