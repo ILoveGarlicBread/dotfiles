@@ -52,7 +52,7 @@ unzip ~/dotfiles/fonts/FiraCode.zip -d ~/.local/share/fonts/
 unzip ~/dotfiles/fonts/FiraSans.zip -d ~/.local/share/fonts/
 unzip ~/dotfiles/fonts/MesloLGS.zip -d ~/.local/share/fonts/
 gsettings set org.gnome.desktop.interface document-font-name 'Fira Sans 11'
-gsettings set org.gnome.desktop.interface monospace-font-name 'FiraCode Nerd Font Mono 10'
+gsettings set org.gnome.desktop.interface monospace-font-name 'FiraCode Nerd Font Mono Retina 10'
 gsettings set org.gnome desktop.interface font-name 'Fira Sans 11'
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Bold 11'
 if [ %? -eq 0]; then
