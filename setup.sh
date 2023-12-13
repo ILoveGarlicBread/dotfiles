@@ -23,27 +23,25 @@ gsettings get org.gnome.settings-daemon.plugins.media-keys volume-step
 #
 
 # Move config files
-source_folder="~/dotfiles"
-destination_folder="~/.config"
 echo "Moving .zshrc..."
 cp ~/dotfiles/.zshrc ~/
-if [ $? -eq 0]; then
+if [ $? -eq 0 ]; then
   echo ".zshrc moved successfully."
 fi
 echo "Moving kitty..."
 mkdir -p ~/.config/kitty/
-cp $source_folder/.config/kitty/kitty.conf $destination_folder/kitty/
-cp $source_folder/.config/kitty/nord.conf $destination_folder/kitty/
-cp $source_folder/.config/kitty/everforest.conf $destination_folder/kitty/
-cp $source_folder/.config/kitty/gruvbox_dark.conf $destination_folder/kitty/
-if [ $? -eq 0]; then
+cp ~/dotfiles/.config/kitty/kitty.conf ~/.config/kitty/
+cp ~/dotfiles/.config/kitty/nord.conf ~/.config/kitty/
+cp ~/dotfiles/.config/kitty/everforest.conf ~/.config/kitty/
+cp ~/dotfiles/.config/kitty/gruvbox_dark.conf ~/.config/kitty/
+if [ $? -eq 0 ]; then
   echo ".kitty config moved successfully."
 fi
 
 echo "Moving fastfetch..."
 mkdir -p ~/.config/fastfetch/
-cp $source_folder/.config/fastfetch/config.conf ~/.config/fastfetch/
-if [ $? -eq 0]; then
+cp ~/dotfiles/.config/fastfetch/config.conf ~/.config/fastfetch/
+if [ $? -eq 0 ]; then
   echo ".fastfetch config moved successfully."
 fi
 echo "Applying fonts..."
@@ -53,11 +51,12 @@ unzip ~/dotfiles/fonts/FiraSans.zip -d ~/.local/share/fonts/
 unzip ~/dotfiles/fonts/MesloLGS.zip -d ~/.local/share/fonts/
 gsettings set org.gnome.desktop.interface document-font-name 'Fira Sans 11'
 gsettings set org.gnome.desktop.interface monospace-font-name 'FiraCode Nerd Font Mono Retina 10'
-gsettings set org.gnome desktop.interface font-name 'Fira Sans 11'
-gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Bold 11'
-if [ $? -eq 0]; then
+gsettings set org.gnome.desktop.interface font-name 'Fira Sans 11'   
+settings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Bold 11'
+if [ $? -eq 0 ]; then
   echo "Fonts applied successfully"
 fi
+
 echo "Applying theme..."
 mkdir -p ~/.themes
 unzip ~/dotfiles/.themes/Colloid-Dark-Nord.zip -d ~/.themes/
