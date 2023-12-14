@@ -88,9 +88,9 @@ packages=(
   discord
 )
 
-for package in "${packages[@]}"; do 
-  yay -S --noconfirm "$package"
-done
+#for package in "${packages[@]}"; do 
+#  yay -S --noconfirm "$package"
+#done
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cd
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -100,10 +100,15 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 
 
 
-# Install gnome extensions
+# Install gnome extensions and apply config
 cd ~/dotfiles/
 ./install-gnome-extensions.sh --enable --file links.txt
 cd
+dconf load /org/gnome/shell/extensions/ < ~/dotfiles/extensions.conf
+
+
+
+
 }
 
 
