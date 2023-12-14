@@ -121,6 +121,8 @@ alias vi='nvim'
 alias update-grub='sudo update-grub'
 alias pacman-restart='sudo rm /var/lib/pacman/db.lck'
 alias keysound='Neptune -cli -soundkey "Nk Cream 2"'
+alias rm='rmtrash'
+alias rmdir='rmdirtrash'
 
 function run() {
   filename=$1 

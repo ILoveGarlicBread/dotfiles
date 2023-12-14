@@ -82,6 +82,7 @@ packages=(
   tlpui
   realneptune
   vlc
+  rmtrash
 )
 
 for package in "${packages[@]}"; do 
