@@ -51,10 +51,10 @@ echo "Applying fonts..."
 mkdir -p ~/.local/share/fonts/
 cp -r ~/dotfiles/fonts ~/.local/share/
 
-gsettings set org.gnome.desktop.interface document-font-name 'Fira Sans 11'
+gsettings set org.gnome.desktop.interface document-font-name 'Roboto 11'
 gsettings set org.gnome.desktop.interface monospace-font-name 'FiraCode Nerd Font Mono weight=450 10'
-gsettings set org.gnome.desktop.interface font-name 'Fira Sans 11'   
-gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Bold 11'
+gsettings set org.gnome.desktop.interface font-name 'Roboto 11'   
+gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Roboto Bold 11'
 if [ $? -eq 0 ]; then
   echo "Fonts applied successfully"
 fi
@@ -75,6 +75,7 @@ packages=(
   extension-manager
   qbittorrent
   jq
+  sl
   spotify
   spicetify-cli
   qemu
@@ -83,6 +84,8 @@ packages=(
   realneptune
   vlc
   rmtrash
+  timeshift
+  discord
 )
 
 for package in "${packages[@]}"; do 
