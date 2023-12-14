@@ -81,6 +81,7 @@ packages=(
   virt-manager
   tlpui
   realneptune
+  vlc
 )
 
 for package in "${packages[@]}"; do 
