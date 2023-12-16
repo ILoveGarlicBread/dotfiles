@@ -4,6 +4,9 @@
 1. .zshrc
 2. kitty terminal
 3. fastfetch
+4. optimus-manager
+
+
 
 ## Theme related content:
 1. FiraCode fonts

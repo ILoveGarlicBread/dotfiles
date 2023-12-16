@@ -75,6 +75,7 @@ packages=(
   neovim
   extension-manager
   qbittorrent
+  optimus-manager
   libgda
   jq
   sl
