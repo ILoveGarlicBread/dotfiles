@@ -12,4 +12,4 @@
 
 
 ## Screenshots
-![Alt text](https.com/ILoveGarlicBread/dotfiles/blob/master/Screenshot from 2023-12-16 22-35-22.png?raw=true)
+![Alt text](https.com/ILoveGarlicBread/dotfiles/screenshot1.png)
