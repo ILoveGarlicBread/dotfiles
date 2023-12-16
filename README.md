@@ -12,4 +12,4 @@
 
 
 ## Screenshots
-![alt text](https://github.com/ILoveGarlicBread/dotfiles/screenshot1.png)
+![alt text](https://github.com/ILoveGarlicBread/dotfiles/blob/master/screenshot1.png)
