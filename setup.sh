@@ -68,14 +68,18 @@ gsettings set org.gnome.desktop.interface gtk-theme "Colloid-Dark-Nord"
 # Installing packages
 packages=(
   zsh
+  ifplugd
   kitty
   fortune-mod
   fastfetch
   neovim
   extension-manager
   qbittorrent
+  libgda
   jq
   sl
+  lsd
+  python-pip
   spotify
   spicetify-cli
   qemu
@@ -83,6 +87,7 @@ packages=(
   tlpui
   realneptune
   vlc
+  sox
   rmtrash
   timeshift
   discord
