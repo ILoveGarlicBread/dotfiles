@@ -19,12 +19,11 @@
 
 ## Installation
 Enable firewall and add exception for gsconnect.
-'''bash
+```sh
 sudo ufw enable
 sudo ufw allow 1716:1764/tcp
 sudo ufw allow 1716:1764/udp
 sudo firewall-cmd --permanent --zone=public --add-service=kdeconnect 
 sudo firewall-cmd --reload
-'''
-
+```
 
