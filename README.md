@@ -16,3 +16,15 @@
 
 ## Screenshots
 ![alt text](https://github.com/ILoveGarlicBread/dotfiles/blob/master/screenshot1.png)
+
+## Installation
+Enable firewall and add exception for gsconnect.
+'''bash
+sudo ufw enable
+sudo ufw allow 1716:1764/tcp
+sudo ufw allow 1716:1764/udp
+sudo firewall-cmd --permanent --zone=public --add-service=kdeconnect 
+sudo firewall-cmd --reload
+'''
+
+
