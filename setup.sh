@@ -3,9 +3,12 @@
 # Post-install set up script
 
 cd 
-  
+
 function main()
 {
+
+
+timedatectl set-local-rtc 1 --adjust-system-clock 
 # Gnome settings
 echo "Enabling tap to click..."
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
