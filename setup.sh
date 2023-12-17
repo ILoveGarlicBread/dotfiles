@@ -77,6 +77,7 @@ packages=(
   qbittorrent
   optimus-manager
   libgda
+  ranger
   jq
   sl
   lsd
