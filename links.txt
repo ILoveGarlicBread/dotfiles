@@ -13,3 +13,8 @@ https://extensions.gnome.org/extension/3960/transparent-top-bar-adjustable-trans
 https://extensions.gnome.org/extension/19/user-themes/
 https://extensions.gnome.org/extension/1460/vitals/
 https://extensions.gnome.org/extension/5177/vertical-workspaces/
+https://extensions.gnome.org/extension/3210/compiz-windows-effect/
+
+
+
+

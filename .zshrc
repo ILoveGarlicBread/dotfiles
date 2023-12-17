@@ -13,6 +13,7 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
+export EDITOR=nvim
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -123,6 +124,9 @@ alias pacman-restart='sudo rm /var/lib/pacman/db.lck'
 alias keysound='Neptune -cli -soundkey "Nk Cream 2"'
 alias rm='rmtrash'
 alias rmdir='rmdirtrash'
+alias ls='lsd'
+alias pyactivate='source .venv/bin/activate'
+alias birdears='python -m birdears'
 
 function run() {
   filename=$1 
