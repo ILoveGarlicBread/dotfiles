@@ -96,6 +96,8 @@ packages=(
   rmtrash
   timeshift
   discord
+  thunderbird
+  lollypop
 )
 
 #for package in "${packages[@]}"; do 
