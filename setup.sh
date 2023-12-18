@@ -81,6 +81,7 @@ packages=(
   optimus-manager
   libgda
   ranger
+  bat
   jq
   sl
   lsd

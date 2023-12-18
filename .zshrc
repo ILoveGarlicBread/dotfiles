@@ -127,6 +127,7 @@ alias rmdir='rmdirtrash'
 alias ls='lsd'
 alias pyactivate='source .venv/bin/activate'
 alias birdears='python -m birdears'
+alias bat='cat'
 
 function run() {
   filename=$1 
