@@ -26,4 +26,27 @@ sudo ufw allow 1716:1764/udp
 sudo firewall-cmd --permanent --zone=public --add-service=kdeconnect 
 sudo firewall-cmd --reload
 ```
+Generating ssh key for  github
+For more info: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+```sh 
+ssh-keygen -t ed25519 -C "your_email@example.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+```
+
+Make bash scripts executable:
+
+```sh 
+sudo chmod +x backup.sh install-gnome-extensions.sh setup.sh 
+```
+Run setup script:
+```sh 
+./setup.sh
+```
+
+
+
+
+
 
