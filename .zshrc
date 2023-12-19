@@ -128,6 +128,8 @@ alias ls='lsd'
 alias pyactivate='source .venv/bin/activate'
 alias birdears='python -m birdears'
 alias bat='cat'
+alias icat='kitten icat'
+
 
 function run() {
   filename=$1 
@@ -139,7 +141,7 @@ function run() {
   elif [[ $filename == *.asm ]]; then
     nasm -f elf32 -o "${filename}.o" "$filename"
     ld -m elf_i386 -o "$outputname" "${filename}.o"
-    
+
   fi
 
   if [ $? -eq 0 ]; then

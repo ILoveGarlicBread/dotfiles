@@ -64,6 +64,9 @@ function main() {
 	cp -r ~/dotfiles/.themes/Colloid-Dark-Nord ~/.theme/
 	gsettings set org.gnome.desktop.interface gtk-theme "Colloid-Dark-Nord"
 
+	echo "Applying kmonad config"
+	mkdir -p ~/.config/kmonad
+
 	# Installing packages
 	packages=(
 		zsh
