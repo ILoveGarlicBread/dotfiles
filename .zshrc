@@ -16,8 +16,8 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
 export EDITOR=nvim
-export OPENAI_API_KEY=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
-export OPENAI_KEY=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
+#export OPENAI_API_KEY=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
+#export OPENAI_KEY=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
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
