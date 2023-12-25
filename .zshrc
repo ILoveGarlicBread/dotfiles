@@ -11,13 +11,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
+
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
 export EDITOR=nvim
-#export OPENAI_API_KEY=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
-#export OPENAI_KEY=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
+export OPENAI_KEY=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
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
