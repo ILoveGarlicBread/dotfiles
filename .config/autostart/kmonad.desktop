@@ -1,5 +1,5 @@
 [Desktop Entry]
-    Name=kmonad
-    Exec=kmonad /home/lam/.config/kmonad/config.kbd
-    Type=Application
-    X-GNOME-Autostart-enabled=true
+Name=kmonad
+Comment=Run kmonad 
+Exec=sh -c "kmonad /home/lam/.config/kmonad/built-in.kbd & kmonad /home/lam/.config/kmonad/gmk67.kbd"
+Type=Application
