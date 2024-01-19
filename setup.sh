@@ -98,10 +98,11 @@ function main() {
 		discord
 		thunderbird
 		lollypop
+		yazi
 	)
 
 	for package in "${packages[@]}"; do
-	  yay -S --noconfirm "$package"
+		yay -S --noconfirm "$package"
 	done
 	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	cd

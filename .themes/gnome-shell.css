@@ -130,8 +130,6 @@
   border-radius: 36px;
   padding: 12px;
   background-color: #1c1f26;
-  border: 1px solid black;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .app-folder-dialog .folder-name-container {
@@ -801,8 +799,8 @@ StWidget.focused .app-well-app-running-dot {
 .candidate-popup-content, .modal-dialog {
   background-color: #242932;
   border-radius: 15px;
-  border: 1px solid rgba(0, 0, 0, 0.75);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  border: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
 }
 
 .modal-dialog-linked-button:last-child {
@@ -1614,7 +1612,7 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
   border-radius: 12px;
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.25);
   color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.75);
+  border: none;
 }
 
 #LookingGlassDialog > #Toolbar {
@@ -2327,8 +2325,8 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
   box-shadow: none;
   border: none;
   font-size: 10pt;
-  background-color: #1c1f26;
-  height: 34px;
+  background-color: transparent;
+  height: 40px;
 }
 
 #panel .panel-corner {
@@ -2348,7 +2346,8 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
   transition-duration: 150ms;
   border-radius: 9999px;
   text-shadow: none;
-  border: 3px solid transparent;
+  border: 4px solid transparent;
+  box-shadow: inset 0 0 0 1000px #1c1f26;
 }
 
 #panel .panel-button.clock-display {
@@ -2358,7 +2357,8 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
 #panel .panel-button.clock-display .clock {
   transition-duration: 150ms;
   border-radius: 9999px;
-  border: 3px solid transparent;
+  border: 4px solid transparent;
+  box-shadow: inset 0 0 0 1000px #1c1f26;
 }
 
 #panel .panel-button.screen-recording-indicator {
@@ -2503,6 +2503,7 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
 }
 
 #panel Gjs_status_keyboard_InputSourceIndicator.panel-button,
+#panel Gjs_appindicatorsupport_rgcjonas_gmail_com_indicatorStatusIcon_IndicatorStatusIcon.panel-button,
 #panel Gjs_appindicatorsupport_rgcjonas_gmail_com_indicatorStatusIcon_AppIndicatorsIndicatorStatusIcon.panel-button {
   -natural-hpadding: 18px !important;
   -minimum-hpadding: 18px !important;
@@ -2542,8 +2543,7 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
   border-radius: 12px;
   margin: 0;
   font-weight: normal;
-  border: 1px solid rgba(0, 0, 0, 0.75);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  border: none;
 }
 
 .popup-menu .popup-menu-item {
@@ -3328,9 +3328,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing-rows: 12px;
   spacing-columns: 12px;
 }
-
+/* Radius for non expandable quick settings toggle*/
 .quick-toggle, .quick-menu-toggle {
-  border-radius: 6px;
+  border-radius: 30px;
   min-width: 12em;
   max-width: 12em;
   min-height: 44px;
@@ -3403,9 +3403,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   min-width: auto;
   max-width: auto;
 }
-
+/* Left side radius for expandable quick settings toggles*/
 .quick-menu-toggle .quick-toggle:ltr {
-  border-radius: 6px 0 0 6px;
+  border-radius: 30px 0 0 30px;
 }
 
 .quick-menu-toggle .quick-toggle:ltr > StBoxLayout {
@@ -3457,9 +3457,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: #9bb1cb !important;
   color: rgba(0, 0, 0, 0.87);
 }
-
+/* right side radius for expandable quick settings toggles */
 .quick-menu-toggle .quick-toggle-arrow:ltr {
-  border-radius: 0 6px 6px 0;
+  border-radius: 0 30px 30px 0;
 }
 
 .quick-menu-toggle .quick-toggle-arrow:rtl {
@@ -3551,7 +3551,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .quick-settings-system-item .icon-button, .quick-settings-system-item .background-app-item .close-button, .background-app-item .quick-settings-system-item .close-button {
   background-color: rgba(255, 255, 255, 0.08);
   color: #ffffff;
-  border-radius: 6px;
+  border-radius: 30px;
 }
 
 .quick-settings-system-item .icon-button > StIcon, .quick-settings-system-item .background-app-item .close-button > StIcon, .background-app-item .quick-settings-system-item .close-button > StIcon {
