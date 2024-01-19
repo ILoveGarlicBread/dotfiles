@@ -32,7 +32,7 @@ function main() {
 	echo "\nMoving fastfetch..."
 	mkdir -p ~/.config/fastfetch/
 	mkdir -p ~/Pictures/
-	cp ~/dotfiles/.config/fastfetch/config.conf ~/.config/fastfetch/
+	cp ~/dotfiles/.config/fastfetch/config.jsonc ~/.config/fastfetch/
 	cp -r ~/dotfiles/Logos ~/Pictures/Logos/
 
 	echo "\nApplying fonts..."
@@ -136,7 +136,7 @@ function main() {
 
 	# Install gnome extensions and apply config
 	cd ~/dotfiles/
-	#./install-gnome-extensions.sh --enable --file links.txt
+	./install-gnome-extensions.sh --enable --file links.txt
 	cd
 	dconf load /org/gnome/shell/extensions/ <~/dotfiles/extensions.conf
 
