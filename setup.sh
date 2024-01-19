@@ -67,6 +67,8 @@ function main() {
 	gsettings set org.gnome.desktop.interface gtk-theme 'Colloid-Dark-Nord'
 	rm -rf ~/Colloid-gtk-theme
 
+	echo "\nApplying wallpapers"
+
 	echo "\nApplying kmonad config"
 	mkdir -p ~/.config/kmonad
 	cp -r ~/dotfiles/kmonad ~/.config/kmonad/
