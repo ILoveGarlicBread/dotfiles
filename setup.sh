@@ -93,6 +93,7 @@ function main() {
 		python-pip
 		spotify
 		spicetify-cli
+		spicetify-marketplace-bin
 		qemu
 		virt-manager
 		tlpui
