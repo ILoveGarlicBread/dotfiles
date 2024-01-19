@@ -116,9 +116,9 @@ function main() {
 		yazi
 	)
 
-	for package in "${packages[@]}"; do
-		yay -S --noconfirm "$package"
-	done
+	#for package in "${packages[@]}"; do
+	#	yay -S --noconfirm "$package"
+	#done
 
 	# Setup zsh shell
 	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -136,7 +136,7 @@ function main() {
 
 	# Install gnome extensions and apply config
 	cd ~/dotfiles/
-	./install-gnome-extensions.sh --enable --file links.txt
+	#./install-gnome-extensions.sh --enable --file links.txt
 	cd
 	dconf load /org/gnome/shell/extensions/ <~/dotfiles/extensions.conf
 
