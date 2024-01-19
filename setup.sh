@@ -31,7 +31,9 @@ function main() {
 
 	echo "\nMoving fastfetch..."
 	mkdir -p ~/.config/fastfetch/
+	mkdir -p ~/Pictures/
 	cp ~/dotfiles/.config/fastfetch/config.conf ~/.config/fastfetch/
+	cp -r ~/dotfiles/Logos ~/Pictures/Logos/
 
 	echo "\nApplying fonts..."
 	mkdir -p ~/.local/share/fonts/
