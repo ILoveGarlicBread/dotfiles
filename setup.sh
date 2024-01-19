@@ -70,6 +70,9 @@ function main() {
 	rm -rf ~/Colloid-gtk-theme
 
 	echo "\nApplying wallpapers"
+	cd
+	cp -r ~/dotfiles/Wallpapers ~/Pictures/
+	gsettings set org.gnome.desktop.background picture-uri-dark ~/Pictures/Wallpapers/Lake_House_Nord.png
 
 	echo "\nApplying kmonad config"
 	mkdir -p ~/.config/kmonad
@@ -88,6 +91,7 @@ function main() {
 		extension-manager
 		qbittorrent
 		optimus-manager
+		gdm-prime
 		libgda
 		ranger
 		bat
