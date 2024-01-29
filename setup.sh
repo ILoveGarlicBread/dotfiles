@@ -112,6 +112,7 @@ function main() {
 		qbittorrent
 		optimus-manager
 		gdm-prime
+		ufw
 		libgda
 		ranger
 		bat
