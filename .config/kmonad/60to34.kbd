@@ -1,0 +1,21 @@
+(defcfg
+  input  (device-file "/dev/input/by-id/usb-Compx_2.4G_Wireless_Receiver-event-kbd")
+  output (uinput-sink "KMonad kbd"))
+
+(defsrc
+  esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12   
+  `     1    2    3    4    5    6    7    8    9    0    -     =     bspc
+  tab   q    w    e    r    t    y    u    i    o    p    [     ]    
+  caps  a    s    d    f    g    h    j    k    l    ;    '     \    
+  lsft  z    x    c    v    b    n    m    ,    .    /    rsft    
+  lctl  lmet lalt      spc       ralt prnt rctl                
+  )
+
+(deflayer base
+  caps    f1    f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    
+  0       q     w    e    r    t    0    0    y    u    i    o     p    bspc     
+  tab     a     s    d    f    g    0    h    j    k    l    ;    0     
+  caps    z     x    c    v    b    0    n    m    ,    .    /     \    
+  lsft    0     0    0    esc  spc  lsft bspc 0    0    0    rsft      
+  lctl    lmet  lalt      spc       ralt cmps rctl                 
+  )
