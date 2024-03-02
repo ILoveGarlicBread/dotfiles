@@ -135,6 +135,7 @@ function main() {
 		thunderbird
 		lollypop
 		yazi
+		lazygit
 	)
 
 	#for package in "${packages[@]}"; do
