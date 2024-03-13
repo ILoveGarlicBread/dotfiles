@@ -136,6 +136,7 @@ function main() {
 		lollypop
 		yazi
 		lazygit
+		zoxide
 	)
 
 	#for package in "${packages[@]}"; do
