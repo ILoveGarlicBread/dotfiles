@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cp ~/.zshrc ~/dotfiles/
-sed -i '7d' ~/dotfiles/.zshrc
 cp -r ~/.config/kitty ~/dotfiles/.config
 cp -r ~/.config/fastfetch ~/dotfiles/.config
 cp -r ~/.config/kmonad ~/dotfiles/.config

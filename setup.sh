@@ -22,8 +22,6 @@ function main() {
 	gsettings get org.gnome.settings-daemon.plugins.media-keys volume-step
 
 	# Move config files
-	echo "\nMoving .zshrc..."
-	cp ~/dotfiles/.zshrc ~/
 
 	echo "\nMoving kitty..."
 	mkdir -p ~/.config/kitty/
@@ -80,20 +78,6 @@ function main() {
 	mkdir -p ~/.config/autostart
 	cp ~/dotfiles/autostart/kmonad.desktop ~/.config/autostart/
 
-	# Setup zsh shell
-	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-	cd
-	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-	git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-	git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
-	git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
-
-	# Setup neovim
-	rm -rf ~/.config/nvim
-	mkdir -p ~/.config/nvim
-	git clone https://github.com/ILoveGarlicBread/neovim.git ~/.config/nvim/
-
 	# Install gnome extensions and apply config
 	cd ~/dotfiles/
 	#./install-gnome-extensions.sh --enable --file links.txt
@@ -139,10 +123,24 @@ function main() {
 		zoxide
 	)
 
-	#for package in "${packages[@]}"; do
-	#	yay -S --noconfirm "$package"
-	#done
+	for package in "${packages[@]}"; do
+		yay -S --noconfirm "$package"
+	done
 
+	# Setup zsh shell
+	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	cd
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+	git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+	git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
+	git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
+
+	echo "\nMoving .zshrc..."
+	ln -s ~/dotfiles/.zshrc ~/.zshrc
+	echo "\nMoving tmux config..."
+	ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+	ln -s ~/dotfiles/.tmux ~/.tmux
 }
 
 main

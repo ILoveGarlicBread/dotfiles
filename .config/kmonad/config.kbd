@@ -1,0 +1,38 @@
+(defcfg
+  input  (device-file "/dev/input/by-id/usb-ASUSTeK_Computer_Inc._N-KEY_Device-if02-event-kbd")
+  output (uinput-sink "KMonad kbd"))
+
+(defsrc
+  esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    pause  prnt  ins  del
+  `     1    2    3    4    5    6    7    8    9    0    -     =      bspc              home
+  tab   q    w    e    r    t    y    u    i    o    p    [     ]      ret               pgup
+  caps  a    s    d    f    g    h    j    k    l    ;    '     \                        pgdn
+  lsft  z    x    c    v    b    n    m    ,    .    /    rsft         up                end
+  lctl  lmet lalt      spc       ralt prnt rctl                 left   down   rght
+  )
+
+(defalias
+ vim (tap-next-release esc lctl)
+ slc (sticky-key 500 lsft)
+ nav (layer-switch leftalt)
+ bse (layer-switch base)
+)
+
+(deflayer base
+  @nav    f1    f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    pause  prnt  ins  del
+  `       1     2    3    4    5    6    7    8    9    0    -     =      bspc              home
+  tab     q     w    f    p    g    j    l    u    y    '    [     ]      ret               pgup
+  @vim    a     r    s    t    d    h    n    e    i    o    ;     \                        pgdn
+  @slc    z     x    c    v    b    k    m    ,    .    /    rsft         up                end
+  lctl    lmet  lalt      spc       lalt cmps rctl                 left   down   rght
+  )
+
+(deflayer leftalt
+  @bse    _     _    _    _    _    _    _    _    _    _    _     _      _     _ _ _ 
+  _       _     _    _    _    _    _    _    _    _    _    _     _      _              _
+  _       _     _    _    _    _    _    _    _    _    _    _     _      _               _
+  _       _     _    _    _    _    _    _    _    _    _    _     _                        _
+  _       _     _    _    _    _    _    _    _    _    _    _         _                _
+  _    _  _      _       _ _ _                 _   _   _
+  )
+
