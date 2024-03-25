@@ -94,8 +94,6 @@ function main() {
 		neovim
 		extension-manager
 		qbittorrent
-		optimus-manager
-		gdm-prime
 		ufw
 		libgda
 		ranger
