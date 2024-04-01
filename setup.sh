@@ -20,6 +20,7 @@ function main() {
 	gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 1
 	echo -n "Volume step = "
 	gsettings get org.gnome.settings-daemon.plugins.media-keys volume-step
+	gsettings set org.gnome.settings-daemon.plugins.power idle-brightness 100
 
 	# Move config files
 
