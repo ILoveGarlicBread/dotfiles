@@ -103,6 +103,7 @@ function main() {
 		sl
 		lsd
 		python-pip
+		ocs-url
 		spotify
 		spicetify-cli
 		spicetify-marketplace-bin
@@ -114,8 +115,8 @@ function main() {
 		sox
 		rmtrash
 		timeshift
-		discord
 		thunderbird
+		vesktop-bin
 		lollypop
 		yazi
 		lazygit
