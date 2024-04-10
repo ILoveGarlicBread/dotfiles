@@ -121,6 +121,7 @@ function main() {
 		yazi
 		lazygit
 		zoxide
+		acpi
 	)
 
 	for package in "${packages[@]}"; do
