@@ -1,6 +1,7 @@
-fortune
-echo ""
-fastfetch
+#tmux attach-session -t Home
+#fortune
+#echo ""
+#fastfetch
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -31,6 +32,8 @@ alias pyactivate='source .venv/bin/activate'
 alias birdears='python -m birdears'
 alias icat='kitten icat'
 alias ranger='source ranger 2>/dev/null'
+alias c='z'
+alias ci='zi'
 
 function run() {
   filename=$1 
@@ -42,6 +45,17 @@ function run() {
   elif [[ $filename == *.asm ]]; then
     nasm -f elf32 -o "${filename}.o" "$filename"
     ld -m elf_i386 -o "$outputname" "${filename}.o"
+  elif [[ $filename == *.go ]]; then
+    go build -o "$outputname" "$filename"
+  elif [[ $filename == *.rs ]]; then
+    rustc -o "$outputname" "$filename"
+  elif [[ $filename == *.py ]]; then
+    python "$filename"
+  elif [[ $filename == *.sh ]]; then
+    bash "$filename"
+  else
+    echo "Unknown file type"
+    return 1
 
   fi
 
@@ -54,7 +68,7 @@ function run() {
   fi
 }
   
-function trsl(){
+function gpt(){
   while true
   do
     # Input text
@@ -64,8 +78,7 @@ function trsl(){
     if [[ $userInput == ":q" ]]; then
       return 
     else
-      # Translation
-      tgpt "Translate to English: $userInput"
+      tgpt "$userInput"
     fi
   done
   
@@ -78,4 +91,4 @@ function ya() {
 	fi
 	rm -f -- "$tmp"
 }
-
+eval "$(zoxide init zsh)"
