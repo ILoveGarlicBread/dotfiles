@@ -1,7 +1,3 @@
-#tmux attach-session -t Home
-#fortune
-#echo ""
-#fastfetch
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -18,6 +14,8 @@ source $ZSH/oh-my-zsh.sh
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Aliases
+alias f="fastfetch"
 alias gpt="tgpt"
 alias :q="exit"
 alias yays="yay -S $1"
@@ -35,7 +33,13 @@ alias ranger='source ranger 2>/dev/null'
 alias c='z'
 alias ci='zi'
 
-function run() {
+# Functions
+mcd() {
+  mkdir -p $1 
+  cd $1
+}
+
+run() {
   filename=$1 
   outputname="${filename%.*}"
   if [[ $filename == *.cpp ]]; then
@@ -51,6 +55,7 @@ function run() {
     rustc -o "$outputname" "$filename"
   elif [[ $filename == *.py ]]; then
     python "$filename"
+    return 1
   elif [[ $filename == *.sh ]]; then
     bash "$filename"
   else
@@ -62,13 +67,13 @@ function run() {
   if [ $? -eq 0 ]; then
     echo "Compilation successful\n"
     ./"$outputname"
-    echo "Exit code: "$?
+    echo "\nExit code: "$?
   else
     echo "Compilation is fucked."
   fi
 }
   
-function gpt(){
+function gpt() {
   while true
   do
     # Input text
@@ -83,7 +88,7 @@ function gpt(){
   done
   
 }
-function ya() {
+ya() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
@@ -91,4 +96,7 @@ function ya() {
 	fi
 	rm -f -- "$tmp"
 }
+
+
 eval "$(zoxide init zsh)"
+eval "$(tmuxifier init -)"
