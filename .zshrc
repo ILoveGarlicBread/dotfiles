@@ -4,6 +4,7 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
 export EDITOR=nvim
+export PATH="$HOME/.tmux/plugins/tmuxifier/bin/:$PATH"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ENABLE_CORRECTION="true"
@@ -21,17 +22,16 @@ alias :q="exit"
 alias yays="yay -S $1"
 alias yayr="yay -Rns $1"
 alias py='python'
-alias vi='nvim'
 alias update-grub='sudo update-grub'
 alias pacman-restart='sudo rm /var/lib/pacman/db.lck'
-alias keysound='Neptune -cli -soundkey "Nk Cream 2"'
 alias ls='lsd'
-alias pyactivate='source .venv/bin/activate'
-alias birdears='python -m birdears'
-alias icat='kitten icat'
 alias ranger='source ranger 2>/dev/null'
 alias c='z'
 alias ci='zi'
+
+# Keybindings
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward
 
 # Functions
 mcd() {

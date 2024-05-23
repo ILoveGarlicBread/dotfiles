@@ -33,6 +33,9 @@ For more info: https://docs.github.com/en/authentication/connecting-to-github-wi
 ssh-keygen -t ed25519 -C "your_email@example.com"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
+eval $(ssh-agent)
+ssh-add
+
 ```
 
 Make bash scripts executable:
