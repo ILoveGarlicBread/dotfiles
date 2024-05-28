@@ -16,11 +16,11 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Aliases
+alias yays="yay -S $@"
+alias yayr="yay -Rns $@"
 alias f="fastfetch"
 alias gpt="tgpt"
 alias :q="exit"
-alias yays="yay -S $1"
-alias yayr="yay -Rns $1"
 alias py='python'
 alias update-grub='sudo update-grub'
 alias pacman-restart='sudo rm /var/lib/pacman/db.lck'
