@@ -28,6 +28,8 @@ alias ls='lsd'
 alias ranger='source ranger 2>/dev/null'
 alias c='z'
 alias ci='zi'
+alias rm='rm -i'
+alias mv='mv -i'
 
 # Keybindings
 bindkey "^[[A" history-search-backward
