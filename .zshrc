@@ -30,6 +30,7 @@ alias c='z'
 alias ci='zi'
 alias rm='rm -i'
 alias mv='mv -i'
+alias 'gitl'="git log --all --graph --decorate"
 
 # Keybindings
 bindkey "^[[A" history-search-backward

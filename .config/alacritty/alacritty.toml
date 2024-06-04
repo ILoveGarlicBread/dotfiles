@@ -14,3 +14,6 @@ bold_italic = { family = "Meslo LG S NF", style = "Bold Italic" }
 size = 13.0
 offset = { y = 0}
 
+[window]
+startup_mode = "Maximized"
+dimensions = { columns = 78,lines = 23 }
