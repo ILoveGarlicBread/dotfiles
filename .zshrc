@@ -32,6 +32,7 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias 'gitl'="git log --all --graph --decorate"
 
+
 # Keybindings
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
@@ -99,7 +100,19 @@ ya() {
 	fi
 	rm -f -- "$tmp"
 }
+function brickrun(){
+  sshpass -p "maker" scp -r ~/Code/ev3/$1 robot@10.42.0.3:/home/robot/ev3/  
+  sshpass -p "maker" ssh robot@10.42.0.3 "brickrun ./ev3/$1"
+}
+function bricksend(){
+  sshpass -p "maker" scp -r ~/Code/ev3/$1 robot@10.42.0.3:/home/robot/ev3/  
+  if [ $? -ne 0 ]; then
+    echo "Error"
+  else 
+    echo "File sent successfully"
+  fi
+}
 
 
 eval "$(zoxide init zsh)"
-eval "$(tmuxifier init -)"
+#eval "$(tmuxifier init -)"
