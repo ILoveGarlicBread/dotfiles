@@ -59,7 +59,8 @@ run() {
     rustc -o "$outputname" "$filename"
   elif [[ $filename == *.py ]]; then
     python "$filename"
-    return 1
+  elif [[ $filename == *.java ]]; then
+    javac "$filename"
   elif [[ $filename == *.sh ]]; then
     bash "$filename"
   else
@@ -70,7 +71,12 @@ run() {
 
   if [ $? -eq 0 ]; then
     echo "Compilation successful\n"
-    ./"$outputname"
+    if [[ $filename == *.java ]]; then
+      java $outputname
+    
+    else
+      ./"$outputname"
+    fi
     echo "\nExit code: "$?
   else
     echo "Compilation is fucked."
