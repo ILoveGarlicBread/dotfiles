@@ -16,6 +16,7 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Aliases
+alias cdl="cd $1; ls"
 alias yays="yay -S $@"
 alias yayr="yay -Rns $@"
 alias f="fastfetch"
@@ -73,7 +74,10 @@ run() {
     echo "Compilation successful\n"
     if [[ $filename == *.java ]]; then
       java $outputname
-    
+    elif [[ $filename == *.py ]]; then
+      echo ""
+    elif [[ $filename == *.sh ]]; then
+      echo ""
     else
       ./"$outputname"
     fi
