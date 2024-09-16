@@ -9,7 +9,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ENABLE_CORRECTION="true"
 
-plugins+=(git zsh-syntax-highlighting zsh-autosuggestions zsh-autocomplete zsh-vi-mode)
+plugins+=(git zsh-syntax-highlighting zsh-autosuggestions zsh-autocomplete)
+#zsh-vi-mode)
+
+# Set cursor to blinking line
+echo '\e[5 q'
+
 
 source $ZSH/oh-my-zsh.sh
 
