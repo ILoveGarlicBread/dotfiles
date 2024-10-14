@@ -2101,8 +2101,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Slider */
 .slider {
-  height: 20px;
-  color: #242932;
+  height: 15px;
+  color: #89a3c2;
   -slider-height: 2px;
   -slider-background-color: rgba(255, 255, 255, 0.3);
   -slider-border-color: #89a3c2;
@@ -2112,7 +2112,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -slider-handle-radius: 7px;
   -slider-handle-border-width: 2px;
   -slider-handle-border-color: #89a3c2;
-  -barlevel-height: 2px;
+  -barlevel-height: 15px;
   -barlevel-background-color: rgba(255, 255, 255, 0.3);
   -barlevel-border-color: transparent;
   -barlevel-active-background-color: #89a3c2;
@@ -3635,7 +3635,8 @@ StWidget.focused .app-grid-running-dot {
 .message .message-header .quick-settings-system-item .message-close-button {
   background-color: rgba(255, 255, 255, 0.08);
   color: #ffffff;
-  border-radius: 6px;
+  /*Lam: radius of screenshot, setting, lock, power */
+  border-radius: 9999px;
 }
 
 .quick-settings-system-item .icon-button > StIcon, .quick-settings-system-item .background-app-item .close-button > StIcon, .background-app-item .quick-settings-system-item .close-button > StIcon, .quick-settings-system-item .message .message-header .message-expand-button > StIcon, .message .message-header .quick-settings-system-item .message-expand-button > StIcon,
