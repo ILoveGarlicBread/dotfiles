@@ -83,7 +83,7 @@ run() {
     elif [[ $filename == *.sh ]]; then
       echo ""
     else
-      ./"$outputname"
+      ./"$outputname" 
     fi
     echo "\nExit code: "$?
   else
